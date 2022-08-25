@@ -1,0 +1,79 @@
+<!-- <h2>{{hero}}</h2> -->
+<!-- <h2>{{hero.name}}</h2> -->
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- <h2>{{hero.name | uppercase}} Details</h2>
+<div>
+    <span>id: </span>{{hero.id}}
+</div>
+<div> -->
+
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <!-- <span>name: </span>{{hero.name}} -->
+    <!-- ++++++++++++++++++++++++++++++++ -->
+
+    <!-- <label for="name">Hero name</label> -->
+
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <!-- ↓ "[(ngModel)]" pour synchroniser l'input avec le state -->
+    <!-- ++++++++++++++++++++++++++++++++ -->
+
+    <!-- <input type="text" [(ngModel)]="hero.name">
+</div> -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- <ul class="heroes">
+    <li *ngFor="let h of heroes">
+        <button type="button" (click)="onSelect(h)">
+            <span class="badge">{{h.id}}</span>
+            <span class="name">{{h.name}}</span>
+        </button>
+    </li>
+</ul>
+
+<h2 *ngIf="selectedHero">{{selectedHero.name}}</h2> -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<h2>Liste des héros</h2>
+<ul class="heroes">
+    <li *ngFor="let h of heroes">
+        <button type="button" (click)="onSelect(h)"
+            [class.selected]="h === selectedHero">  
+
+            <!-- ++++++++++++++++++++++++++++++++ -->
+            <!-- ↑ en React, [class.selected]="h === selectedHero" pourrait être une ternaire -->
+            <!-- ++++++++++++++++++++++++++++++++ -->
+
+            <span class="badge">{{h.id}}</span>
+            <span class="name">{{h.name}}</span>
+        </button>
+    </li>
+    <li>
+        <button type="button" (click)="onRandomSelect()"> 
+            <span class="badge">0</span>
+            <span class="name">Get Random Hero</span>
+        </button>
+    </li>
+</ul>
+
+<!-- <div *ngIf="selectedHero">
+    <h2>{{selectedHero.name | uppercase}} Details</h2>
+    <div>id : {{selectedHero.id}}</div>
+    <div>
+        <label for="hero-name">Hero name: </label>
+        <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
+    </div>
+</div> -->
+<!-- OU BIEN -->
+<app-hero-detail [selectedHero]="selectedHero"></app-hero-detail>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
